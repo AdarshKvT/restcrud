@@ -19,6 +19,11 @@ public class BookController {
         return bookService.saveBook(book);
     }
 
+    @PostMapping("/add-books")
+    public List<Book> addBooks(@RequestBody List<Book> books) {
+        return bookService.saveBooks(books);
+    }
+
     @GetMapping("/get-book/{id}")
     public Optional<Book> getBook(@PathVariable int id) {
         return bookService.getBook(id);
@@ -30,7 +35,12 @@ public class BookController {
     }
 
     @PutMapping("update-book")
-    public Book updateBook(@RequestBody Book book){
+    public Book updateBook(@RequestBody Book book) {
         return bookService.updateBook(book);
+    }
+
+    @DeleteMapping("/delete/{id}")
+    public String deleteBook(@PathVariable int id) {
+        return bookService.deleteBook(id);
     }
 }

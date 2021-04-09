@@ -14,8 +14,12 @@ public class BookService {
     @Autowired
     private BookRepository bookRepo;
 
-    public Book saveBook(Book bookModel) {
-        return bookRepo.save(bookModel);
+    public Book saveBook(Book book) {
+        return bookRepo.save(book);
+    }
+
+    public List<Book> saveBooks(List<Book> book) {
+        return bookRepo.saveAll(book);
     }
 
     public Optional<Book> getBook(int id) {
@@ -33,4 +37,8 @@ public class BookService {
         return bookRepo.save(existingProduct);
     }
 
+    public String deleteBook(int id) {
+        bookRepo.deleteById(id);
+        return "Book with id " + id + " has been deleted !!";
+    }
 }
