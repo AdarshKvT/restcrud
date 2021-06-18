@@ -36,4 +36,4 @@ jobs:
         run: docker build . --file Dockerfile --tag adarshkavtiyal/restcurd
       
       - name: Push to Docker Hub
-        run: docker push ${{ secrets.DOCKER_USERNAME }}/restcrud
+        run: docker push adarshkavtiyal/restcrud:latest
