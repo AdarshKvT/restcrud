@@ -33,7 +33,7 @@ jobs:
         run: |
           docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
       - name: Build the Docker Image
-        run: docker build . --file Dockerfile --tag adarshkvt/restcurd:$(date +%s)
+        run: docker build . --file Dockerfile --tag adarshkavtiyal/restcurd:$(date +%s)
       
       - name: Push to Docker Hub
         run: docker push ${{ secrets.DOCKER_USERNAME }}/restcrud
