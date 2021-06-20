@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: restcrud-app
+  labels:
+    app: restcrud-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: restcrud-app
+  template:
+    metadata:
+      labels:
+        app: restcrud-app
+    spec:
+      containers:
+        - name: restcrud-app
+          image: adarshkavtiyal/restcrud
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
